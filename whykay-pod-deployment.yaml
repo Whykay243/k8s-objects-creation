@@ -1,0 +1,21 @@
+apiVersion: apps/v1             # API version for Deployments
+kind: Deployment                # Object type: Deployment
+metadata:
+  name: whykay-deployment       # Name of the Deployment
+  labels:
+    app: whykay                 # Labels to identify app group
+spec:
+  replicas: 3                   # Number of desired pods
+  selector:
+    matchLabels:
+      app: whykay               # Selects Pods with this label
+  template:                     # Template for the managed Pods
+    metadata:
+      labels:
+        app: whykay             # Labels applied to Pods (must match selector)
+    spec:
+      containers:
+        - name: nginx           # Name of the container
+          image: nginx          # Docker image to use
+          ports:
+            - containerPort: 80 # Port the container exposes (e.g., HTTP)

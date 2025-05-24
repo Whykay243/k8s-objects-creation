@@ -1,0 +1,26 @@
+apiVersion: v1              # Kubernetes API version used to create this object
+kind: Pod                   # Object type — here, a Pod
+metadata:
+  name: whykay-pod           # Name of the Pod
+spec:
+  containers:               # List of containers in this Pod
+  - name: nginx             # Name of the container
+    image: nginx            # Docker image to use for this container
+    ports:
+    - containerPort: 80     # Port exposed by the container (default HTTP port for nginx)
+
+
+
+
+# Running the Pod manifest use command: kubectl apply -f whykay-pod.yaml
+
+# To creat the pod, use the command: kubectl create -f nginx-pod.yaml
+
+# To check the status of the Pod, use the command: kubectl get pods
+
+#To describe the Pod, use the command: kubectl describe pod whykay-pod
+
+#To delete the Pod, use the command: kubectl delete pod whykay-pod
+
+#To view the logs of the Pod, use the command: kubectl logs whykay-pod
+
